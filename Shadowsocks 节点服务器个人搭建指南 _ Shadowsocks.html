@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Shadowsocks 节点服务器个人搭建指南 | Shadowsocks</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Shadowsocks 节点服务器个人搭建指南">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Shadowsocks 终极使用指南">
+<meta property="og:description" content="Shadowsocks 终极使用指南">
+<link rel="canonical" href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html">
+<meta property="og:url" content="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html">
+<meta property="og:site_name" content="Shadowsocks">
+<script type="application/ld+json">
+{"headline":"Shadowsocks 节点服务器个人搭建指南","@type":"WebPage","url":"https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html","description":"Shadowsocks 终极使用指南","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <style class="anchorjs"></style><link rel="stylesheet" href="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/style.css">
+  <style type="text/css">#_copy{align-items:center;background:#4494D5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}</style></head>
+  <body _c_t_common="1" _c_t_j1="1">
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://shadowsockshelp.github.io/Shadowsocks/">Shadowsocks</a></h1>
+      
+
+      <h1 id="shadowsocks-节点服务器个人搭建指南">Shadowsocks 节点服务器个人搭建指南</h1>
+
+<blockquote>
+  <p><a href="https://s-s-r.github.io/">【推荐】SS/ShadowsocksR付費穩定服務器！一鍵接入，鏈接全球！</a></p>
+</blockquote>
+
+<ul>
+  <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#------">个人搭建指南</a>
+    <ul>
+      <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#-----">服务器选择</a></li>
+      <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#-----">服务器系统</a></li>
+      <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-libev">Shadowsocks-libev</a>
+        <ul>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#obfs---">obfs 混淆</a></li>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-libev-----">Shadowsocks-libev安装与配置</a></li>
+        </ul>
+      </li>
+      <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks---">Shadowsocks客户端</a>
+        <ul>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#windows">Windows</a>
+            <ul>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#----">下载地址</a></li>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#----">本地配置</a></li>
+            </ul>
+          </li>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#macos">macos</a>
+            <ul>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-ng">Shadowsocks-NG</a></li>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#clashx">ClashX</a></li>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#surge">Surge</a></li>
+            </ul>
+          </li>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#ios">iOS</a>
+            <ul>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#surge-1">Surge</a></li>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowrocket">Shadowrocket</a></li>
+            </ul>
+          </li>
+          <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#Android">Android</a>
+            <ul>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks">Shadowsocks</a></li>
+              <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#postern">Postern</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="服务器选择">服务器选择<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%89%E6%8B%A9" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>一般来说，VPS的虚拟化技术主流为 OpenVZ 与 KVM 架构，从各种资源以及 SS 服务支持上，建议选择 KVM 架构的机器，以下所有的说明都是基于<a href="https://bandwagonhost.com/aff.php?aff=42678">搬瓦工</a>  KVM 建构的机器。</p>
+
+<ul>
+  <li><a href="https://bandwagonhost.com/aff.php?aff=42678">搬瓦工aff</a></li>
+</ul>
+
+<h2 id="服务器系统">服务器系统<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%B3%BB%E7%BB%9F" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>服务器建议安装带有BBR技术的Linux系统，TCP BBR 拥塞控制算法由 Google 开发，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。</p>
+
+<p>搬瓦工的机器可以在控制面板 —&gt; install new os —&gt; centos-7-x86_64-bbr，快速更换系统，注意备份服务器上的数据。</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/newOS.png" alt=""></p>
+
+<h2 id="shadowsocks-libev">Shadowsocks-libev<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-libev" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>随着技术发展，SS与墙之间的交锋也是一次比一次激烈，据传说，即使是SS的256位加密，运营商可以做到解密，监视SS使用者的上网流量，真实性未知，但小心点总不会错。</p>
+
+<p>目前有4个衍生版本的SS:</p>
+
+<ol>
+  <li>Shadowsocks-go: 二进制编译, 轻量, 快速</li>
+  <li>Shadowsocks-python: 无功无过，也是最原始的版本，近年来更新速度略慢</li>
+  <li>Shadowsocks-libev: 一直处于更新之中，最大的特点是支持obfs混淆</li>
+  <li>ShadowsocksR: 从作者到产品都极负争议性, obfs混淆模式开创者, 但是前一段时间SSR服务器普遍遭到GFW的封杀.</li>
+</ol>
+
+<p>现阶段为了能在安全与速度之间取得平衡，我个人更加推荐使用 Shadowsocks-libev + obfs混淆。</p>
+
+<h4 id="obfs-混淆">obfs 混淆<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#obfs-%E6%B7%B7%E6%B7%86" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>obfs 混淆最大的作用是对 SS 流量进行伪装, 在不添加obfs的情况下, 运营商服务器通过的流量为未知的加密流量, 据说 GFW 已经有一定的包检测的能力, 仅仅加密流量具有一定的风险, 添加 obfs http 模式之后, 通过运营商的流量会被识别为设定好的网址的流量, 假设你设定的是 bing, 那么你的 SS 流量会被判别为你当前正在访问 bing, 减少了被封杀的可能性，<strong>tls模式安全性高于http模式</strong>。</p>
+
+<p>之前流量不是无限的时代, 因为只有运营商的 APP 可以无限使用流量, 比如什么天翼视讯, 利用 obfs 混淆, 可以将你的手机流量伪装为天翼视讯的流量, 从而达到无限使用使用流量, 这种操作太骚, 实测可以成功, 不过还是低调的好.</p>
+
+<h3 id="shadowsocks-安装与配置">Shadowsocks 安装与配置<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>请注意，随着时间流逝，以下教程必然会过时，因此仅作为个人服务器搭建的参考。</p>
+
+<p>安装图省心推荐使用ShadowsocksR一键安装管理脚本。</p>
+
+<ul>
+  <li>
+    <p>脚本说明: ShadowsocksR 一键安装管理脚本，支持单端口/多端口切换和管理</p>
+  </li>
+  <li>
+    <p>系统支持: CentOS6+ / Debian6+ / Ubuntu14+</p>
+  </li>
+  <li>
+    <p>使用方法: https://doub.io/ss-jc42/</p>
+  </li>
+  <li>
+    <p>项目地址: https://github.com/ToyoDAdoubiBackup/shadowsocksr</p>
+  </li>
+</ul>
+
+<p>使用root用户ssh登录</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   wget <span class="nt">-N</span> <span class="nt">--no-check-certificate</span> https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh
+   <span class="nb">chmod</span> +x ssr.sh
+   bash ssr.sh
+</code></pre></div></div>
+
+<p>脚本特点:</p>
+
+<p>目前网上的各个ShadowsocksR脚本基本都是只有 安装/启动/重启 等基础功能，对于小白来说还是不够简单方便。既然是一键脚本，那么就要尽可能地简单，小白更容易接受使用！</p>
+
+<ul>
+  <li>
+    <p>支持 限制 用户速度</p>
+  </li>
+  <li>
+    <p>支持 限制 端口设备数</p>
+  </li>
+  <li>
+    <p>支持 显示 当前连接IP</p>
+  </li>
+  <li>
+    <p>支持 显示 SS/SSR连接+二维码</p>
+  </li>
+  <li>
+    <p>支持 切换管理 单/多端口</p>
+  </li>
+  <li>
+    <p>支持 一键安装 锐速</p>
+  </li>
+  <li>
+    <p>支持 一键安装 BBR</p>
+  </li>
+  <li>
+    <p>支持 一键封禁 垃圾邮件(SMAP)/BT/PT</p>
+  </li>
+</ul>
+
+<h2 id="shadowsocks客户端">Shadowsocks客户端<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks%E5%AE%A2%E6%88%B7%E7%AB%AF" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>Shadowsocks客户端已经全平台覆盖了, Github 上也有专门的开源客户端项目。</p>
+
+<ul>
+  <li>
+    <p><a href="https://shadowsockshelp.github.io/Shadowsocks/download.html">Shadowsocks 客户端软件备用下载地址</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/shadowsocks/simple-obfs/releases">SS obfs-local插件下载地址</a></p>
+  </li>
+</ul>
+
+<h4 id="本地配置">本地配置<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>服务器端已将安装了 obfs, 本地端直接下载obfs-local插件, 解压后<strong>将插件 obfs-local 与Shdowsocks.exe 同一路径下</strong>即可。</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/Snipaste_2018-09-12_09-22-01.png" alt=""></p>
+
+<p>obfs可以直接在SS的服务器编辑页面修改参数</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/Snipaste_2018-09-12_09-24-32.png" alt=""></p>
+
+<p>插件选项为 <strong>obfs=http;obfs-host=www.bing.com</strong>, 实际上可以将 www.bing.com 更换为任意的一个网址, 只要不是被GFW封杀的就可以, 推荐像腾讯视频, 优酷, bing这种流量较大的网站, <del>如果填写是Google或者YouTube, 活着不好么……</del></p>
+
+<ul>
+  <li><a href="https://shadowsockshelp.github.io/Shadowsocks/windows.html">微软 Windows 使用 Shadowsocks 设置教程</a></li>
+</ul>
+
+<h3 id="macos">macos<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#macos" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p><del>macos上的ss客户端目前似乎还是不支持obfs混淆.</del>
+2018/10/06更新</p>
+<h4 id="shadowsocks-ng">Shadowsocks-NG<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-ng" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>GitHub上存在好几种Mac客户端，使用最广的是Shadowsocks-NG，目前的版本中已经支持obfs混淆，并且已经直接集成于客户端之中，无需额外下载，按照windows的设置填写参数即可。
+<img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/macOsNG.png" alt=""></p>
+
+<ul>
+  <li><a href="https://shadowsockshelp.github.io/Shadowsocks/mac.html">苹果 macOS 使用 Shadowsocks 设置教程</a></li>
+</ul>
+
+<h4 id="clashx">ClashX<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#clashx" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>最近出现了一个新的类Surge软件，ClashX，目前还在快速迭代期之中，兼容 Surge 的 config 文件，基本上对其稍作修改便可以导入 ClashX 中使用。</p>
+
+<p>类Surge软件的核心都在于config文件，在SS网络分流的基础上，对不同的流量产生不同的行为，可以实现指定网址代理，广告屏蔽等效果，自由度更高。</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/clashX.png" alt=""></p>
+
+<ul>
+  <li><a href="https://github.com/yichengchen/clashX/releases">ClashX 下载地址</a></li>
+</ul>
+
+<h4 id="surge">Surge<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#surge" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>支持obfs混淆，在3.0版本中加入了全新的rule-set模式，config的管理从本地可以完全移至云端，不同的rule-set对应不同的应用规则，更容易管理，只可惜没钱截图😂</p>
+
+<h3 id="ios">iOS<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#ios" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>iOS上推荐的客户端为 Shadowrocket 与 Surge, 首推 Shadowrocket , 因为便宜够用, 唯一遗憾的是国区下架了, 只能用非国区的 Apple ID 购买与下载, Surge3 目前可以在国区下载, 虽然 Surge 是配置文件类开创者, UI 更好看, 功能更强大,颇高的上手难度与328的价格会吓退不少人，但一句话，Surge 贵在稳定。</p>
+
+<p>两款客户端均支持 obfs, Surge 2 与 Surge 3 均支持 tls  与 http 两种模式; shadowrocket 支持 http 与 tls 两种模式</p>
+
+<p>2018年10月8日更新：Quantumult 最近热度也上来了，在小火箭与 Quantumult 任选其一既可。</p>
+
+<ul>
+  <li><a href="https://shadowsockshelp.github.io/Shadowsocks/ios.html">苹果 iOS 使用 Shadowsocks 设置教程</a></li>
+</ul>
+
+<h4 id="surge-1">Surge<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#surge-1" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>Surge 在编辑服务器的 Advance 设置中可以配置混淆</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/surge.png" alt="surge"></p>
+
+<h4 id="shadowrocket">Shadowrocket<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowrocket" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>shadowrocket在服务器的编辑页面中即可设置混淆</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/sr.png" alt="sr"></p>
+
+<ul>
+  <li><a href="https://shadowsocks-help.github.io/ios/">Shadowrocket小火箭 在线安装</a></li>
+</ul>
+
+<h3 id="android">Android<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#android" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<h4 id="shadowsocks">Shadowsocks<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>推荐在Google Play上下载Shadowsocks app, 同时下载obfs插件, 开发者均为 Max Lv.</p>
+
+<p><img src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/ass.png" alt=""></p>
+
+<ul>
+  <li><a href="https://shadowsockshelp.github.io/Shadowsocks/Android.html">安卓 Android 使用 Shadowsocks 设置教程</a></li>
+</ul>
+
+<h4 id="postern">Postern<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#postern" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+
+<p>Postern 目前尚不支持混淆模式。</p>
+
+<h2 id="shadowsocks-设置使用教程">Shadowsocks 设置使用教程<a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#shadowsocks-%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>[1] <a href="https://shadowsockshelp.github.io/Shadowsocks/windows.html">微软 Windows 使用 Shadowsocks 设置教程</a></p>
+
+<p>[2] <a href="https://shadowsockshelp.github.io/Shadowsocks/Android.html">安卓 Android 使用 Shadowsocks 设置教程</a></p>
+
+<p>[3] <a href="https://shadowsockshelp.github.io/Shadowsocks/ios.html">苹果 iOS 使用 Shadowsocks 设置教程</a></p>
+
+<p>[4] <a href="https://shadowsockshelp.github.io/Shadowsocks/mac.html">苹果 macOS 使用 Shadowsocks 设置教程</a></p>
+
+<p>[5] <a href="https://shadowsockshelp.github.io/Shadowsocks/linux.html">Linux 使用 Shadowsocks 设置教程</a></p>
+
+<p>[6] <a href="https://shadowsockshelp.github.io/Shadowsocks/download.html">Shadowsocks 客户端软件备用下载地址</a></p>
+
+<hr>
+
+<h3 id="返回首页"><a href="https://shadowsockshelp.github.io/Shadowsocks/">«&nbsp;返回首页</a><a class="anchorjs-link " href="https://shadowsockshelp.github.io/Shadowsocks/Shadowsocks-server.html#%E8%BF%94%E5%9B%9E%E9%A6%96%E9%A1%B5" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+
+      
+    </div>
+    <script src="./Shadowsocks 节点服务器个人搭建指南 _ Shadowsocks_files/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  
+
+</body></html>
